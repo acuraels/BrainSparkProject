@@ -4,6 +4,7 @@ const blogSections = document.querySelectorAll('.post.short');
 
 blogSections.forEach(blogSection => {
     const moreButton = blogSection.querySelector('.read-more');
+
     moreButton.addEventListener('click', () => {
         blogSection.classList.remove('short');
     });
@@ -22,10 +23,14 @@ previews.forEach(preview => {
     preview.addEventListener('click', event => {
         event.preventDefault();
         activePhoto.src = preview.href;
+
         const currentActive = document.querySelector('.preview-thumbnails .active-preview');
-        if (currentActive) {
+
+        if (currentActive) 
+            {
             currentActive.classList.remove('active-preview');
-        }
+            }   
+
         preview.classList.add('active-preview');
     });
 });
